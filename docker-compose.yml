@@ -4,9 +4,9 @@ services:
     restart: always
     image: nginx:1.20.1
     ports:
-      - "8080:80"
+      - "${APP_PORT}:80"
     volumes:
-      - ./src:/var/www/hackathon/src
+      - ./src:${APP_DIRECTORY}
       - ./docker/nginx/backend/default.conf:/etc/nginx/conf.d/default.conf
     depends_on:
       - php-back
@@ -15,7 +15,7 @@ services:
     container_name: app_back
     build: ./docker/php
     volumes:
-      - ./src:/var/www/hackathon/src
+      - ./src:${APP_DIRECTORY}
     environment:
       XDEBUG_CONFIG: "remote_host=192.168.220.1 remote_enable=1"
       PHP_IDE_CONFIG: "serverName=Docker"
