@@ -39,9 +39,9 @@
     <div class="col-xl-8 col-md-6 col-12">
       <div class="card card-statistics">
         <div class="card-header">
-          <h4 class="card-title">Statistics</h4>
+          <h4 class="card-title">Данные в системе</h4>
           <div class="d-flex align-items-center">
-            <p class="card-text font-small-2 me-25 mb-0">Updated 1 month ago</p>
+            <p class="card-text font-small-2 me-25 mb-0">Дата последнего обновления 3 часа назад</p>
           </div>
         </div>
         <div class="card-body statistics-body">
@@ -67,8 +67,8 @@
                   </div>
                 </div>
                 <div class="my-auto">
-                  <h4 class="fw-bolder mb-0">8.549k</h4>
-                  <p class="card-text font-small-3 mb-0">Customers</p>
+                  <h4 class="fw-bolder mb-0">{{ $users_count }}</h4>
+                  <p class="card-text font-small-3 mb-0">Пользователей</p>
                 </div>
               </div>
             </div>

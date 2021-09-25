@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 
+use App\Models\User;
+
 class HomeController extends Controller
 {
     public function __construct()
@@ -12,6 +14,10 @@ class HomeController extends Controller
 
     public function index()
     {
-        return view('content.dashboard.dashboard-ecommerce');
+        $users = User::query()->get()->count();
+
+        return view('content.dashboard.dashboard-ecommerce', [
+            'users_count' => $users
+        ]);
     }
 }
