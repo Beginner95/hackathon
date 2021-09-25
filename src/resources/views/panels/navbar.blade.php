@@ -17,8 +17,8 @@
         <li class="nav-item dropdown dropdown-user">
           <a class="nav-link dropdown-toggle dropdown-user-link" id="dropdown-user" href="javascript:void(0);" data-bs-toggle="dropdown" aria-haspopup="true">
             <div class="user-nav d-sm-flex d-none">
-              <span class="user-name fw-bolder">{{ $user->name }}</span>
-              <span class="user-status">{{ $user->email }}</span>
+              <span class="user-name fw-bolder">{{ Auth::user()->name }}</span }}</span>
+              <span class="user-status">{{ Auth::user()->email }}</span>
             </div>
             <span class="avatar">
               <img class="round" src="{{asset('images/portrait/small/avatar-s-11.jpg')}}" alt="avatar" height="40" width="40">
@@ -33,15 +33,14 @@
             <a class="dropdown-item" href="{{url('page/account-settings')}}">
               <i class="me-50" data-feather="settings"></i> Settings
             </a>
-            <a class="dropdown-item" href="{{url('page/pricing')}}">
-              <i class="me-50" data-feather="credit-card"></i> Pricing
-            </a>
-            <a class="dropdown-item" href="{{url('page/faq')}}">
-              <i class="me-50" data-feather="help-circle"></i> FAQ
-            </a>
-            <a class="dropdown-item" href="{{url('auth/login-v2')}}">
+            <a class="dropdown-item" href="{{ route('logout') }}"
+               onclick="event.preventDefault();
+               document.getElementById('logout-form').submit();">
               <i class="me-50" data-feather="power"></i> Logout
             </a>
+              <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                  @csrf
+              </form>
           </div>
         </li>
       </ul>

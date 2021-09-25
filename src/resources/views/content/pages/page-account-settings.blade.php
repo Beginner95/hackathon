@@ -73,19 +73,6 @@
             <span class="fw-bold">Social</span>
           </a>
         </li>
-        <!-- notification -->
-        <li class="nav-item">
-          <a
-            class="nav-link"
-            id="account-pill-notifications"
-            data-bs-toggle="pill"
-            href="#account-vertical-notifications"
-            aria-expanded="false"
-          >
-            <i data-feather="bell" class="font-medium-3 me-1"></i>
-            <span class="fw-bold">Notifications</span>
-          </a>
-        </li>
       </ul>
     </div>
     <!--/ left menu section -->
@@ -107,7 +94,7 @@
               <div class="d-flex">
                 <a href="#" class="me-25">
                   <img
-                    src="{{asset('images/portrait/small/avatar-s-11.jpg')}}"
+                    src="{{ $user->avatar }}"
                     id="account-upload-img"
                     class="rounded me-50"
                     alt="profile image"
@@ -120,38 +107,38 @@
                   <label for="account-upload" class="btn btn-sm btn-primary mb-75 me-75">Upload</label>
                   <input type="file" id="account-upload" hidden accept="image/*" />
                   <button class="btn btn-sm btn-outline-secondary mb-75">Reset</button>
-                  <p>Allowed JPG, GIF or PNG. Max size of 800kB</p>
+                  <p>Разрешены форматы JPG, GIF or PNG. максимальный размер 1 мб</p>
                 </div>
                 <!--/ upload and reset button -->
               </div>
               <!--/ header section -->
 
               <!-- form -->
-              <form class="validate-form mt-2">
+              <form class="validate-form mt-2" method="post" action="{{ route('account.general.save') }}">
                 <div class="row">
                   <div class="col-12 col-sm-6">
                     <div class="mb-1">
-                      <label class="form-label" for="account-username">Username</label>
+                      <label class="form-label" for="account-username">Логин</label>
                       <input
                         type="text"
                         class="form-control"
                         id="account-username"
                         name="username"
-                        placeholder="Username"
-                        value="johndoe"
+                        placeholder="Логин"
+                        value="{{ $user->name }}"
                       />
                     </div>
                   </div>
                   <div class="col-12 col-sm-6">
                     <div class="mb-1">
-                      <label class="form-label" for="account-name">Name</label>
+                      <label class="form-label" for="account-name">Ф.И.О.</label>
                       <input
                         type="text"
                         class="form-control"
                         id="account-name"
                         name="name"
-                        placeholder="Name"
-                        value="John Doe"
+                        placeholder="Ф.И.О."
+                        value="{{ $user->full_name }}"
                       />
                     </div>
                   </div>
@@ -164,34 +151,13 @@
                         id="account-e-mail"
                         name="email"
                         placeholder="Email"
-                        value="granger007@hogward.com"
+                        value="{{ $user->email }}"
                       />
-                    </div>
-                  </div>
-                  <div class="col-12 col-sm-6">
-                    <div class="mb-1">
-                      <label class="form-label" for="account-company">Company</label>
-                      <input
-                        type="text"
-                        class="form-control"
-                        id="account-company"
-                        name="company"
-                        placeholder="Company name"
-                        value="Crystal Technologies"
-                      />
-                    </div>
-                  </div>
-                  <div class="col-12 mt-75">
-                    <div class="alert alert-warning mb-50" role="alert">
-                      <h4 class="alert-heading">Your email is not confirmed. Please check your inbox.</h4>
-                      <div class="alert-body">
-                        <a href="javascript: void(0);" class="alert-link">Resend confirmation</a>
-                      </div>
                     </div>
                   </div>
                   <div class="col-12">
-                    <button type="submit" class="btn btn-primary mt-2 me-1">Save changes</button>
-                    <button type="reset" class="btn btn-outline-secondary mt-2">Cancel</button>
+                    <button type="submit" class="btn btn-primary mt-2 me-1">Сохранить изменения</button>
+                    <button type="reset" class="btn btn-outline-secondary mt-2">Отмена</button>
                   </div>
                 </div>
               </form>
@@ -346,6 +312,7 @@
                   </div>
                 </div>
               </form>
+
               <!--/ form -->
             </div>
             <!--/ information -->
@@ -422,64 +389,6 @@
                       <input type="text" id="account-quora" class="form-control" placeholder="Add link" />
                     </div>
                   </div>
-
-                  <!-- divider -->
-                  <div class="col-12">
-                    <hr class="my-2" />
-                  </div>
-
-                  <div class="col-12 mt-1">
-                    <!-- profile connection header -->
-                    <div class="d-flex align-items-center mb-3">
-                      <i data-feather="user" class="font-medium-3"></i>
-                      <h4 class="mb-0 ms-75">Profile Connections</h4>
-                    </div>
-
-                    <div class="row">
-                      <!-- twitter user -->
-                      <div class="col-6 col-md-3 text-center mb-1">
-                        <p class="fw-bold">Your Twitter</p>
-                        <div class="avatar mb-1">
-                          <span class="avatar-content">
-                            <img
-                              src="{{asset('images/avatars/11-small.png')}}"
-                              alt="avatar img"
-                              width="40"
-                              height="40"
-                            />
-                          </span>
-                        </div>
-                        <p class="mb-0">@johndoe</p>
-                        <a href="#">Disconnect</a>
-                      </div>
-                      <!-- facebook button -->
-                      <div class="col-6 col-md-3 text-center mb-1">
-                        <p class="fw-bold mb-2">Your Facebook</p>
-                        <button class="btn btn-outline-primary">Connect</button>
-                      </div>
-                      <!-- google user -->
-                      <div class="col-6 col-md-3 text-center mb-1">
-                        <p class="fw-bold">Your Google</p>
-                        <div class="avatar mb-1">
-                          <span class="avatar-content">
-                            <img
-                              src="{{asset('images/avatars/3-small.png')}}"
-                              alt="avatar img"
-                              width="40"
-                              height="40"
-                            />
-                          </span>
-                        </div>
-                        <p class="mb-0">@luraweber</p>
-                        <a href="#">Disconnect</a>
-                      </div>
-                      <!-- github button -->
-                      <div class="col-6 col-md-3 text-center mb-2">
-                        <p class="fw-bold mb-1">Your GitHub</p>
-                        <button class="btn btn-outline-primary">Connect</button>
-                      </div>
-                    </div>
-                  </div>
                   <div class="col-12">
                     <!-- submit and cancel button -->
                     <button type="submit" class="btn btn-primary me-1 mt-1">Save changes</button>
@@ -490,65 +399,6 @@
               <!--/ form -->
             </div>
             <!--/ social -->
-
-            <!-- notifications -->
-            <div
-              class="tab-pane fade"
-              id="account-vertical-notifications"
-              role="tabpanel"
-              aria-labelledby="account-pill-notifications"
-              aria-expanded="false"
-            >
-              <div class="row">
-                <h6 class="section-label mb-2">Activity</h6>
-                <div class="col-12 mb-2">
-                  <div class="form-check form-switch">
-                    <input type="checkbox" class="form-check-input" checked id="accountSwitch1" />
-                    <label class="form-check-label" for="accountSwitch1">
-                      Email me when someone comments onmy article
-                    </label>
-                  </div>
-                </div>
-                <div class="col-12 mb-2">
-                  <div class="form-check form-switch">
-                    <input type="checkbox" class="form-check-input" checked id="accountSwitch2" />
-                    <label class="form-check-label" for="accountSwitch2">
-                      Email me when someone answers on my form
-                    </label>
-                  </div>
-                </div>
-                <div class="col-12 mb-2">
-                  <div class="form-check form-switch">
-                    <input type="checkbox" class="form-check-input" id="accountSwitch3" />
-                    <label class="form-check-label" for="accountSwitch3">Email me hen someone follows me</label>
-                  </div>
-                </div>
-                <h6 class="section-label mt-2">Application</h6>
-                <div class="col-12 mt-1 mb-2">
-                  <div class="form-check form-switch">
-                    <input type="checkbox" class="form-check-input" checked id="accountSwitch4" />
-                    <label class="form-check-label" for="accountSwitch4">News and announcements</label>
-                  </div>
-                </div>
-                <div class="col-12 mb-2">
-                  <div class="form-check form-switch">
-                    <input type="checkbox" class="form-check-input" checked id="accountSwitch6" />
-                    <label class="form-check-label" for="accountSwitch6">Weekly product updates</label>
-                  </div>
-                </div>
-                <div class="col-12 mb-75">
-                  <div class="form-check form-switch">
-                    <input type="checkbox" class="form-check-input" id="accountSwitch5" />
-                    <label class="form-check-label" for="accountSwitch5">Weekly blog digest</label>
-                  </div>
-                </div>
-                <div class="col-12">
-                  <button type="submit" class="btn btn-primary mt-2 me-1">Save changes</button>
-                  <button type="reset" class="btn btn-outline-secondary mt-2">Cancel</button>
-                </div>
-              </div>
-            </div>
-            <!--/ notifications -->
           </div>
         </div>
       </div>

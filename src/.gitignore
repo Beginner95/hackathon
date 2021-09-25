@@ -5,6 +5,10 @@
 /vendor
 /public/css
 public/js
+/public/data
+/public/fonts
+/public/images
+/public/vendors
 .env
 .env.backup
 .phpunit.result.cache
