@@ -16,6 +16,8 @@
                         <thead>
                             <tr>
                                 <th>Наименование</th>
+                                <th>ИНН</th>
+                                <th>ОГРН</th>
                                 <th>Телефон</th>
                                 <th>Email</th>
                                 <th>Адрес</th>
@@ -31,6 +33,8 @@
                                     <td>
                                         <span class="fw-bold">{{ $sonko->title }}</span>
                                     </td>
+                                    <td>{{ $sonko->inn }}</td>
+                                    <td>{{ $sonko->ogrn }}</td>
                                     <td>{{ $sonko->phone }}</td>
                                     <td>{{ $sonko->email }}</td>
                                     <td>{{ $sonko->address }}</td>

@@ -20,6 +20,8 @@ class SonkoRequest extends FormRequest
             'email' => ['required', 'email', 'max:255'],
             'workers' => ['nullable', 'numeric'],
             'head' => ['required', 'string', 'max:255'],
+            'inn' => ['required', 'string', 'max:255'],
+            'ogrn' => ['required', 'string', 'max:255'],
             'description' => ['nullable', 'string', 'max:255'],
             'address'=> ['required', 'string', 'max:255'],
             'status' => ['required', Rule::in(['active', 'inactive'])]

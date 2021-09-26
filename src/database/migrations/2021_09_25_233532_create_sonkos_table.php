@@ -15,6 +15,8 @@ class CreateSonkosTable extends Migration
             $table->string('email');
             $table->string('address');
             $table->string('head');
+            $table->string('inn')->nullable();
+            $table->string('ogrn')->nullable();
             $table->integer('workers')->default(1);
             $table->tinyText('description')->nullable();
             $table->string('status')->default('active');

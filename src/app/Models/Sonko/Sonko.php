@@ -16,6 +16,8 @@ class Sonko extends \App\Models\BaseModel
         'description',
         'address',
         'status',
+        'inn',
+        'ogrn'
     ];
 
     public function destitutes(): HasMany

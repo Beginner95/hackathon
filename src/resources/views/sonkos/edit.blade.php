@@ -93,6 +93,32 @@
                                     />
                                     <div class="valid-tooltip">Данные заполнены корректно!</div>
                                 </div>
+                                <div class="col-md-4 col-12 mb-3 position-relative">
+                                    <label class="form-label" for="validationTooltip02">ИНН</label>
+                                    <input
+                                        type="number"
+                                        class="form-control"
+                                        id="validationTooltip02"
+                                        placeholder="ИНН"
+                                        value="{{ $sonko->inn }}"
+                                        required
+                                        name="inn"
+                                    />
+                                    <div class="valid-tooltip">Данные заполнены корректно!</div>
+                                </div>
+                                <div class="col-md-4 col-12 mb-3 position-relative">
+                                    <label class="form-label" for="validationTooltip02">ОГРН</label>
+                                    <input
+                                        type="number"
+                                        class="form-control"
+                                        id="validationTooltip02"
+                                        placeholder="ОГРН"
+                                        value="{{ $sonko->ogrn }}"
+                                        required
+                                        name="ogrn"
+                                    />
+                                    <div class="valid-tooltip">Данные заполнены корректно!</div>
+                                </div>
                                 <!-- Basic Textarea start -->
                                 <section class="basic-textarea">
                                     <div class="row">
