@@ -25,9 +25,9 @@ services:
     restart: always
     image: postgres:13
     environment:
-      POSTGRES_USER: hackathon
-      POSTGRES_PASSWORD: hackathon
-      POSTGRES_DB: hackathon
+      POSTGRES_USER: ${DB_USERNAME}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      POSTGRES_DB: ${DB_DATABASE}
     volumes:
       - ./docker/db/postgres:/var/lib/postgresql/data
     ports:
