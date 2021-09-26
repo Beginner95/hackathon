@@ -9,11 +9,6 @@ data-asset-path="{{ asset('/')}}">
   <!-- BEGIN: Header-->
   @include('panels.navbar')
 
-  {{-- Include Sidebar --}}
-  @if((isset($configData['showMenu']) && $configData['showMenu'] === true))
-  @include('panels.horizontalMenu')
-  @endif
-
   <!-- BEGIN: Content-->
   <div class="app-content content {{$configData['pageClass']}}">
     <div class="content-overlay"></div>

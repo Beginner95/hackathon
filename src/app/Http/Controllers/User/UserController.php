@@ -8,6 +8,11 @@ use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
+    public function index()
+    {
+        return view('');
+    }
+
     public function accountSettings(Request $request)
     {
         $user = $request->user();

@@ -2,6 +2,9 @@
 
 namespace App\Models\Sonko;
 
+use App\Models\Destitute\Destitute;
+use Illuminate\Database\Eloquent\Relations\HasMany;
+
 class Sonko extends \App\Models\BaseModel
 {
     protected $fillable = [
@@ -14,4 +17,9 @@ class Sonko extends \App\Models\BaseModel
         'address',
         'status',
     ];
+
+    public function destitutes(): HasMany
+    {
+        return $this->hasMany(Destitute::class);
+    }
 }
